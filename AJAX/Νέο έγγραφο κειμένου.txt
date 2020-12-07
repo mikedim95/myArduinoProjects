@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>onClick Demo</title>
+</head>
+<body>
+<img id="example" onclick="changeImage()" src="Light_Off.gif" width="400" height="418">
+
+<script>
+function changeImage()
+{
+element=document.getElementById('example')
+if (element.src.match("On"))
+  {
+  element.src="Light_Off.gif";
+  }
+else
+  {
+  element.src="Light_On.gif";
+  }
+}
+</script>
+
+</body>
+</html>		

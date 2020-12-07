@@ -1,0 +1,720 @@
+<html>
+<head>
+  <!--@@@ Εδω είναι οι το κεντρικό TAB-->
+  
+  <div id="myTab" class="tab">
+  <button id="btn1"disabled="true" style="align-self: right;" class="tablinks" onclick="openCity(event, 'London')">  Lights</button>
+  <button id="btn2"disabled="true"class="tablinks" onclick="openCity(event, 'Paris')">  Roller Shutters</button>
+    Temperature : <span id="Temperature">0</span>
+  <br>
+    Humidity : <span id="Humidity">NA</span>
+</div>
+<img id="Config" onclick="alert('config')" src="sun.png" align="middle" style="align-self: middle; position: absolute;top: 1.5%; left:94.5%;  height:8%; width:5%;">
+  <style>
+  	.btn2:hover{
+  		opacity: 0.7;
+  		
+  	}
+
+  	.btn{
+  		
+  		transform: scaleY(-1);
+  	}
+  	.btn:hover{
+  		opacity: 0.7;
+  		
+  	}
+	.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #000000;
+  color: white;
+}
+
+/* Style the bvduttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  color: black
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #FFFFFF;
+   color: black
+}
+
+/* Style the tab content */
+.tabcontent {
+	background-image: url('Top_view.jpg');
+  background-repeat: no-repeat;
+  background-attachment: relative; 
+    left: 0%;
+    top:0%;
+    height:90%;
+  width: 98%;
+  background-size: 100% 100%;
+  background-position:0px 0px;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.button2 {
+  padding: 15px 25px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button2:hover {background-color: #3e8e41}
+
+.button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+.button1 {
+  padding: 15px 25px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #FF0000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button1:hover {background-color: #8B0000}
+
+.button1:active {
+  background-color: #8B0000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+</style>
+</head>
+
+
+<body><!--@@@ Εδω είναι τα κουμπιά του πρώτου TAB-->
+	<div id="London" class="tabcontent">
+  		<button style="position: relative;top: 0%; left:0%;  height:8%; width:10%;" id="onButton"onclick="turnOn()"class="button2">All On</button>
+	    <button style="position: relative;top: 0%; left:0%;  height:8%; width:10%;" id="offButton"onclick="turnOff()"class="button1">All Off</button>
+
+  		<img id="Led1" onclick="changeImage('Led1')" src="Light_Off.gif" align="middle" style="position: relative;top: 9%; left:20%;  height:6%; width:2%;">
+  		<img id="Led2" onclick="changeImage('Led2')" src="Light_Off.gif" align="middle" style="position: relative;top: 9%; left:55%;  height:6%; width:2%;">
+  		<img id="Led3" onclick="changeImage('Led3'),changeImage('Led4')" src="Light_Off.gif" align="middle" style="position: relative;top: 70%; left:5%;  height:6%; width:2%;">
+  		<img id="Led4" onclick="changeImage('Led3'),changeImage('Led4')" src="Light_Off.gif" align="middle" style="position: relative;top: 70%; left:55%;  height:6%; width:2%;">
+  		<!--<img id="Led5" onclick="changeImage('Led5')" src="Light_Off.gif" align="middle" style="position: absolute;top: 30%; left:80%;  height:6%; width:2%;">
+  		<img id="Led6" onclick="changeImage('Led6')" src="Light_Off.gif" align="middle" style="position: absolute;top: 50%; left:80%;  height:6%; width:2%;">
+  		<img id="Led7" onclick="changeImage('Led7')" src="Light_Off.gif" align="middle" style="position: absolute;top: 75%; left:80%;  height:6%; width:2%;">
+  		<img id="Led8" onclick="changeImage('Led8')" src="Light_Off.gif" align="middle" style="position: absolute;top: 75%; left:40%;  height:6%; width:2%;">
+  		<img id="Led9" onclick="changeImage('Led9')" src="Light_Off.gif" align="middle" style="position: absolute;top: 75%; left:20%;  height:6%; width:2%;">
+  		<img id="Led10" onclick="changeImage('Led10')" src="Light_Off.gif" align="middle" style="position: absolute;top: 80%; left:80%;  height:6%; width:2%;">
+  		<img id="Led11" onclick="changeImage('Led11')" src="Light_Off.gif" align="middle" style="position: absolute;top: 80%; left:80%;  height:6%; width:2%;">
+  		<img id="Led12" onclick="changeImage('Led12')" src="Light_Off.gif"align="middle" style="position: absolute;top: 80%; left:80%;  height:6%; width:2%;">
+  		<img id="Led13" onclick="changeImage('Led13')" src="Light_Off.gif" align="middle" style="position: absolute;top: 80%; left:80%;  height:6%; width:2%;">
+		-->
+
+    	
+  
+	
+			
+			
+	</div>
+	<div id="Paris" class="tabcontent"><!--@@@ Εδω είναι οι το 2o TAB-->
+  	<button style="position: relative;top: 0%; left:0%;  height:8%; width:10%;" id="onButton2"onclick="turnOn2()"class="button2">&#9650All Up&#9650</button>
+	<button style="position: relative;top: 0%; left:0%;  height:8%; width:10%;" id="offButton2"onclick="turnOff2()"class="button1">&#9660All Down&#9660</button>
+	<img id="relay1"onclick="changeArray('relay1')"src="shutter.jpg"align="middle"style="position:relative;height:10%;width:8%;top:17%;left:10%;">
+  	<img id="relay2"onclick="changeArray('relay2')"src="shutter.jpg"align="middle"style="position:relative;height:10%;width:8%;top:17%;left:13%;">
+  	<img id="relay3"onclick="changeArray('relay3')"src="shutter.jpg"align="middle"style="position:relative;height:10%;width:8%;top:17%;left:16%;">
+  	<img id="relay4"onclick="changeArray('relay4')"src="shutter.jpg"align="middle"style="position:relative;height:10%;width:8%;top:17%;left:19%;">
+  	<img id="relay5"onclick="changeArray('relay5')"src="shutter.jpg"align="middle"style="position:relative;height:10%;width:8%;top:32%;left:11%;">
+  	<img id="relay6"onclick="changeArray('relay6')"src="shutter.jpg"align="middle"style="position:relative;height:10%;width:8%;top:47%;left:3%;">
+  	
+  	<img id="buttonUp"onclick="giveUpOrder()"  align="middle" class="btn2"src="ButtonU.png" align="middle"style=" position:absolute;height:6%;width:4%;top:25%;left:5.5%;">
+  	<img id="buttonPause" onclick="givePauseOrder()" align="middle"class="btn2"src="ButtonP.png" align="middle" style="position: absolute; height:12%; width:8%;top:32%;left:3%;">
+  	<img  id="buttonDown"onclick="giveDownOrder()"align="middle"src="ButtonD.png"class="btn"align="middle"rotate="90"style="position:absolute;height:6%; width:4%;top:45%;left:5.5%;">
+    </div>
+</body>
+
+<script>
+var Relays = [
+  ['relay1', '0'],
+  ['relay2', '0'],
+  ['relay3', '0'],
+  ['relay4', '0'],
+  ['relay5', '0'],
+  ['relay6', '0']
+]; 
+  window.onload = function() {
+  	document.getElementById("btn1").disabled = false;
+  	document.getElementById("btn2").disabled = false;
+    openCity(event, 'London');
+  	/*var passed = true;
+  	while(passed){
+  var pass = prompt("Please enter password:", "");
+  if (pass == 1234) {
+    document.getElementById("btn1").disabled = false;
+    document.getElementById("btn2").disabled = false;
+    passed = false;
+    
+  }else{
+  	alert("Wrong Password, please try again");
+  }
+  }*/
+}
+function changeImage(led){
+  element=document.getElementById(led);
+  if (element.src.match("On"))
+  {
+  element.src="Light_Off.gif";
+  if (led=='Led1'){sendData(0);}
+  else if (led=='Led2'){sendData(2);}
+  else if (led=='Led3'){sendData(4);}
+  else if (led=='Led4'){sendData(6);}
+  else if (led=='Led5'){sendData(8);}
+  else if (led=='Led6'){sendData(10);}
+  else if (led=='Led7'){sendData(12);}
+  else if (led=='Led8'){sendData(14);}
+  else if (led=='Led9'){sendData(16);}
+  else if (led=='Led10'){sendData(18);}
+  else if (led=='Led11'){sendData(20);}
+  else if (led=='Led12'){sendData(22);}
+  else if (led=='Led13'){sendData(24);}
+  }
+  else
+  {
+  element.src="Light_On.gif";
+  if (led=='Led1'){sendData(1);}
+  else if (led=='Led2'){sendData(3);}
+  else if (led=='Led3'){sendData(5);}
+  else if (led=='Led4'){sendData(7);}
+  else if (led=='Led5'){sendData(9);}
+  else if (led=='Led6'){sendData(11);}
+  else if (led=='Led7'){sendData(13);}
+  else if (led=='Led8'){sendData(15);}
+  else if (led=='Led9'){sendData(17);}
+  else if (led=='Led10'){sendData(19);}
+  else if (led=='Led11'){sendData(21);}
+  else if (led=='Led12'){sendData(23);}
+  else if (led=='Led13'){sendData(25);}
+  
+  }
+  }
+function sendData2(led) {   
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+  if (this.readyState == 4 && this.status == 200) {
+  var response =  this.responseText;      
+    document.getElementById("LEDState").innerHTML =response
+    
+    }
+  };
+  xhttp.open("GET", "setRELAY?RELAYstate="+led, true);   
+  xhttp.send();
+  }
+  function sendData(led) {   
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+  if (this.readyState == 4 && this.status == 200) {
+  var response =  this.responseText;      
+    document.getElementById("LEDState").innerHTML =response
+    
+    }
+  };
+  xhttp.open("GET", "setLED?LEDstate="+led, true);   
+  xhttp.send();
+  }
+setInterval(function() {getData();},5000); 
+function getData() {   
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+     document.getElementById("Temperature").innerHTML =this.responseText;
+     
+        }
+    };
+  xhttp.open("GET", "checkT", true);   
+  xhttp.send();
+
+var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+     document.getElementById("Humidity").innerHTML =this.responseText;
+     
+        }
+    };
+  xhttp.open("GET", "checkH", true);   
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led1","on");
+     }else if(this.responseText == "off"){
+      setImage("Led1","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+1, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led2","on");
+     }else if(this.responseText == "off"){
+      setImage("Led2","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+2, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led3","on");
+     }else if(this.responseText == "off"){
+      setImage("Led3","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+3, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led4","on");
+     }else if(this.responseText == "off"){
+      setImage("Led4","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+4, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led5","on");
+     }else if(this.responseText == "off"){
+      setImage("Led5","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+5, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led6","on");
+     }else if(this.responseText == "off"){
+      setImage("Led6","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+6, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led7","on");
+     }else if(this.responseText == "off"){
+      setImage("Led7","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+7, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led8","on");
+     }else if(this.responseText == "off"){
+      setImage("Led8","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+8, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led9","on");
+     }else if(this.responseText == "off"){
+      setImage("Led9","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+9, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led10","on");
+     }else if(this.responseText == "off"){
+      setImage("Led10","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+10, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led11","on");
+     }else if(this.responseText == "off"){
+      setImage("Led11","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+11, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led12","on");
+     }else if(this.responseText == "off"){
+      setImage("Led12","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+12, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage("Led13","on");
+     }else if(this.responseText == "off"){
+      setImage("Led13","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState?LED="+13, true); 
+  xhttp.send();
+}
+function setImage(led,x){
+  
+  if(x=="on"){ 
+    element=document.getElementById(led);
+    element.src="Light_On.gif";
+  }else if(x=="off"){
+    element=document.getElementById(led);
+    element.src="Light_Off.gif";
+  }
+}
+function turnOn(){
+
+  var xhttp = new XMLHttpRequest();   
+    xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {
+        
+   
+      }
+    };
+  xhttp.open("GET", "allOn", true);   
+  xhttp.send();
+}
+function turnOff(){
+
+  var xhttp = new XMLHttpRequest();   
+   xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {
+        
+   
+    }
+  };
+  xhttp.open("GET", "allOff", true);   
+  xhttp.send();
+}
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+function startUp() {
+	document.getElementById("mySelect").disabled = true;
+  var pass = prompt("Please enter password:");
+  if (pass == "1234") {
+    document.getElementById("mySelect").disabled = false;
+  }
+  
+}
+function turnOn2(){
+
+  var xhttp = new XMLHttpRequest();   
+    xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {
+        
+   
+      }
+    };
+  xhttp.open("GET", "allOn2", true);   
+  xhttp.send();
+}
+function turnOff2(){
+
+  var xhttp = new XMLHttpRequest();   
+   xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {
+        
+   
+    }
+  };
+  xhttp.open("GET", "allOff2", true);   
+  xhttp.send();
+}
+function getData2() {   
+  
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) { 
+    var resp =    this.responseText;
+    
+      if(resp == "on"){
+        setImage2("relay1","on");
+     }else if(this.responseText == "off"){
+      setImage2("relay1","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState2?Relay="+1, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage2("relay2","on");
+     }else if(this.responseText == "off"){
+      setImage2("relay2","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState2?Relay="+2, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage2("relay3","on");
+     }else if(this.responseText == "off"){
+      setImage2("relay3","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState2?Relay="+3, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage2("relay4","on");
+     }else if(this.responseText == "off"){
+      setImage2("relay4","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState2?Relay="+4, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage2("relay5","on");
+     }else if(this.responseText == "off"){
+      setImage2("relay5","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState2?Relay="+5, true); 
+  xhttp.send();
+
+  var xhttp = new XMLHttpRequest();   
+  xhttp.onreadystatechange = function() {     
+    if (this.readyState == 4 && this.status == 200) {      
+      if(this.responseText == "on"){
+        setImage2("relay6","on");
+     }else if(this.responseText == "off"){
+      setImage2("relay6","off");
+     }
+   }
+ };
+  xhttp.open("GET", "checkState2?Relay="+6, true); 
+  xhttp.send();
+
+ 
+}
+function setImage2(led,x){
+  
+  if(x=="on"){
+    element=document.getElementById(led);
+    element.src="Up.png";
+  }else if(x=="off"){
+    element=document.getElementById(led);
+    element.src="Down.png";
+  }
+}
+function changeImage2(led){
+  element=document.getElementById(led);
+  if (element.src.match("Up"))
+  {alert("setting img down");
+  element.src="Down.png";
+  if (led=='relay1'){sendData2(0);}
+  else if (led=='relay2'){sendData2(2);}
+  else if (led=='relay3'){sendData2(4);}
+  else if (led=='relay4'){sendData2(6);}
+  else if (led=='relay5'){sendData2(8);}
+  else if (led=='relay6'){sendData2(10);}
+  }
+  else
+  {alert("setting img up");
+  element.src="Up.png";
+  if (led=='relay1'){sendData2(1);}
+  else if (led=='relay2'){sendData2(3);}
+  else if (led=='relay3'){sendData2(5);}
+  else if (led=='relay4'){sendData2(7);}
+  else if (led=='relay5'){sendData2(9);}
+  else if (led=='relay6'){sendData2(11);}
+  
+  }
+  }
+  function changeArray(relay){
+	var element = document.getElementById(relay);
+    element.style.opacity = "0.5";
+   
+    for(i=0;i<6;i++){
+      if(Relays[i][0]==relay){
+	    if(Relays[i][1]=='1'){
+          Relays[i][1]='0';
+          
+          element.style.opacity = "1";
+         
+	    }else if(Relays[i][1]=='0'){
+          Relays[i][1]='1';
+          element.style.opacity = "0.5";
+          
+	    }
+      }
+    }
+  }
+  function giveUpOrder(){
+
+    var element = document.getElementById("buttonUp");
+    element.style.opacity = "0.5";
+    var element = document.getElementById("buttonPause");
+    element.style.opacity  = "1";
+    var element = document.getElementById("buttonDown");
+    element.style.opacity  = "1";
+    for(i=0;i<6;i++){
+      if(Relays[i][1]=='1'){ 
+	     var xhttp = new XMLHttpRequest();   
+         xhttp.onreadystatechange = function() {     
+           if (this.readyState == 4 && this.status == 200) {      
+             alert("giveUpOrder!!");
+           }
+         };
+        xhttp.open("GET", "giveUpOrder?Relay="+i, true); 
+        xhttp.send();
+      }
+    }
+  }
+function giveDownOrder(){
+  var element = document.getElementById("buttonUp");
+    element.style.opacity = "1";
+    var element = document.getElementById("buttonPause");
+    element.style.opacity  = "1";
+    var element = document.getElementById("buttonDown");
+    element.style.opacity = "0.5";
+    for(i=0;i<6;i++){
+      if(Relays[i][1]=='1'){ 
+	     var xhttp = new XMLHttpRequest();   
+         xhttp.onreadystatechange = function() {     
+           if (this.readyState == 4 && this.status == 200) {      
+             alert("giveDownOrder!!");
+           }
+         };
+        xhttp.open("GET", "giveDownOrder?Relay="+i, true); 
+        xhttp.send();
+      }
+    }
+  }
+  function givePauseOrder(){
+    var element = document.getElementById("buttonUp");
+    element.style.opacity = "1";
+    var element = document.getElementById("buttonPause");
+    element.style.opacity  = "0.5";
+    var element = document.getElementById("buttonDown");
+    element.style.opacity  = "1";
+    for(i=0;i<6;i++){
+      if(Relays[i][1]=='1'){ 
+	     var xhttp = new XMLHttpRequest();   
+         xhttp.onreadystatechange = function() {     
+           if (this.readyState == 4 && this.status == 200) {      
+             alert("givePauseOrder!!");
+           }
+         };
+        xhttp.open("GET", "givePauseOrder?Relay="+i, true); 
+        xhttp.send();
+      }
+    }
+  }
+
+</script>
+
+</html>
